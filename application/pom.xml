@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.svomz.commons</groupId>
+    <artifactId>commons</artifactId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+
+  <groupId>org.svomz.commons</groupId>
+  <artifactId>application</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <name>svomz-commons-application</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+
+    <!-- svomz-commons -->
+    <dependency>
+      <groupId>org.svomz.commons</groupId>
+      <artifactId>core</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
+
+    <!-- google libs -->
+  	<dependency>
+  		<groupId>com.google.guava</groupId>
+  		<artifactId>guava</artifactId>
+  		<version>18.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.google.inject</groupId>
+  		<artifactId>guice</artifactId>
+  		<version>4.0-beta5</version>
+  	</dependency>
+    <dependency>
+      <groupId>com.google.inject.extensions</groupId>
+      <artifactId>guice-multibindings</artifactId>
+      <version>4.0-beta5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>annotations</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+
+    <!-- tests -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>1.10.8</version>
+    </dependency>
+  </dependencies>
+</project>
