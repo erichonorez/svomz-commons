@@ -51,6 +51,14 @@ public class DefaultLifecycle implements Lifecycle {
 
   /**
    * Executes the startup commands and flags the application as running.
+   *
+   * If the commands launch services in other threads the lifecycle stage may pass from STARTING to
+   * RUNNING even if the service is not fully launched yet.
+   *
+   * This method guaranteed that every commands configured to be called has be called.
+   *
+   * If commands launch other services in new threads this methods does not guaranteed that these
+   * services are launched when the stage is changed to RUNNING.
    */
   @Override
   public synchronized void start() {

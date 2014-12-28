@@ -28,6 +28,11 @@
       <artifactId>core</artifactId>
       <version>0.1-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>org.svomz.commons</groupId>
+      <artifactId>svomz-commons-net</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
 
     <!-- google libs -->
   	<dependency>

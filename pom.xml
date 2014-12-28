@@ -12,6 +12,7 @@
     <module>application</module>
     <module>core</module>
     <module>samples</module>
+    <module>net</module>
   </modules>
 
   <build>
