@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
 
 import java.util.EnumSet;
 
@@ -21,6 +22,7 @@ public class JettyHttpServer implements HttpServer {
   public JettyHttpServer() {
     this.server = new Server(8080);
     this.servletContextHandler = new ServletContextHandler(ServletContextHandler.NO_SESSIONS);
+    this.servletContextHandler.setContextPath("/");
     this.server.setHandler(this.servletContextHandler);
   }
 
@@ -60,6 +62,14 @@ public class JettyHttpServer implements HttpServer {
   }
 
   @Override
+  public void registerServlet(ServletHolder servletHolder, String path) {
+    Preconditions.checkNotNull(servletHolder);
+    Preconditions.checkNotNull(path);
+
+    this.servletContextHandler.addServlet(servletHolder, path);
+  }
+
+  @Override
   public void registerFilter(Class<? extends Filter> filter, String pathSpec) {
     Preconditions.checkNotNull(filter);
     Preconditions.checkNotNull(pathSpec);
@@ -72,6 +82,14 @@ public class JettyHttpServer implements HttpServer {
     Preconditions.checkNotNull(servletContextListener);
 
     this.servletContextHandler.addEventListener(servletContextListener);
+  }
+
+  @Override
+  public void addInitParam(final String name, final String value) {
+    Preconditions.checkNotNull(name);
+    Preconditions.checkNotNull(value);
+
+    this.servletContextHandler.setInitParameter(name, value);
   }
 
 }

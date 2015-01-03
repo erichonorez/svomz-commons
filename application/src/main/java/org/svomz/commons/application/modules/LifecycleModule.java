@@ -8,6 +8,7 @@ import org.svomz.commons.application.DefaultLifecycle;
 import org.svomz.commons.application.Lifecycle;
 import org.svomz.commons.core.Command;
 
+
 public class LifecycleModule extends AbstractModule {
   @Override
   protected void configure() {
