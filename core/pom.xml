@@ -6,13 +6,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>commons</artifactId>
+        <artifactId>svomz-commons</artifactId>
         <groupId>org.svomz.commons</groupId>
         <version>0.1-SNAPSHOT</version>
     </parent>
 
     <groupId>org.svomz.commons</groupId>
-    <artifactId>core</artifactId>
+    <artifactId>svomz-commons-core</artifactId>
     <version>0.1-SNAPSHOT</version>
     <name>svomz-commons-core</name>
 

@@ -10,31 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>svomz-commons-samples</artifactId>
+    <packaging>pom</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.svomz.commons</groupId>
-            <artifactId>application</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.svomz.commons</groupId>
-            <artifactId>svomz-commons-net</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.glassfish.jersey.containers</groupId>
-            <artifactId>jersey-container-servlet-core</artifactId>
-            <version>2.13</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-json-jackson</artifactId>
-            <version>2.14</version>
-        </dependency>
-
-    </dependencies>
+    <modules>
+        <module>places-api</module>
+        <module>cli-dispatcher</module>
+        <module>http</module>
+    </modules>
 
 </project>

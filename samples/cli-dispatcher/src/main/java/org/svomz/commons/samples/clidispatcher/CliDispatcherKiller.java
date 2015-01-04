@@ -1,11 +1,11 @@
-package org.svomz.commons.samples.cli;
+package org.svomz.commons.samples.clidispatcher;
 
 import com.google.inject.Inject;
 
 import org.svomz.commons.core.Command;
 
 /**
- * Kills the {@link org.svomz.commons.samples.cli.CliDispatcher} when method {@link
+ * Kills the {@link CliDispatcher} when method {@link
  * CliDispatcherKiller#run()} is called.
  */
 public class CliDispatcherKiller implements Command {

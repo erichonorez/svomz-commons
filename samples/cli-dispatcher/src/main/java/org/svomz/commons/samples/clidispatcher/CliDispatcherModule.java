@@ -1,4 +1,4 @@
-package org.svomz.commons.samples.cli;
+package org.svomz.commons.samples.clidispatcher;
 
 import com.google.inject.Binder;
 import com.google.inject.Singleton;
@@ -7,11 +7,11 @@ import com.google.inject.multibindings.Multibinder;
 import org.svomz.commons.application.modules.AbstractApplicationModule;
 
 /**
- * Configures the {@link org.svomz.commons.samples.cli.CliDispatcher} modules by binding the
- * CliDispatcher and by adding {@link org.svomz.commons.samples.cli.CliDispatcherLauncher} and
+ * Configures the {@link CliDispatcher} modules by binding the
+ * CliDispatcher and by adding {@link CliDispatcherLauncher} and
  * {@link org.svomz.commons.samples.cli .CliDispatcherKiller} to lifecycle.
  *
- * It allows you to configure the {@link org.svomz.commons.samples.cli.CliDispatcher} by adding
+ * It allows you to configure the {@link CliDispatcher} by adding
  * endpoints.
  */
 public class CliDispatcherModule extends AbstractApplicationModule {

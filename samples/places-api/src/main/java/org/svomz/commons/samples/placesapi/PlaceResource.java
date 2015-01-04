@@ -1,7 +1,7 @@
-package org.svomz.commons.samples.jersey;
+package org.svomz.commons.samples.placesapi;
 
-import org.svomz.commons.samples.jersey.domain.Place;
-import org.svomz.commons.samples.jersey.domain.PlaceRepository;
+import org.svomz.commons.samples.placesapi.domain.Place;
+import org.svomz.commons.samples.placesapi.domain.PlaceRepository;
 
 import java.util.Set;
 

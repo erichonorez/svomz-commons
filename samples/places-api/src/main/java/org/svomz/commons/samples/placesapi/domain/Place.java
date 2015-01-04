@@ -1,4 +1,4 @@
-package org.svomz.commons.samples.jersey.domain;
+package org.svomz.commons.samples.placesapi.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

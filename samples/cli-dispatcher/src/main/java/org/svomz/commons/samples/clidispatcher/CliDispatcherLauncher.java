@@ -1,12 +1,12 @@
-package org.svomz.commons.samples.cli;
+package org.svomz.commons.samples.clidispatcher;
 
 import com.google.inject.Inject;
 
 import org.svomz.commons.core.Command;
 
 /**
- * Starts the {@link org.svomz.commons.samples.cli.CliDispatcher} when {@link
- * org.svomz.commons.samples.cli.CliDispatcherLauncher#run()} is called.
+ * Starts the {@link CliDispatcher} when {@link
+ * CliDispatcherLauncher#run()} is called.
  */
 public class CliDispatcherLauncher implements Command {
 

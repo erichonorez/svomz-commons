@@ -1,10 +1,10 @@
-package org.svomz.commons.samples.jersey;
+package org.svomz.commons.samples.placesapi;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 
-import org.svomz.commons.samples.jersey.domain.InMemoryPlaceRepository;
-import org.svomz.commons.samples.jersey.domain.PlaceRepository;
+import org.svomz.commons.samples.placesapi.domain.InMemoryPlaceRepository;
+import org.svomz.commons.samples.placesapi.domain.PlaceRepository;
 
 public class PlaceDomainModule extends AbstractModule {
 

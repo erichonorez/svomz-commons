@@ -1,4 +1,4 @@
-package org.svomz.commons.samples.jersey.domain;
+package org.svomz.commons.samples.placesapi.domain;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package org.svomz.commons.samples.cli;
+package org.svomz.commons.samples.clidispatcher;
 
 import com.google.inject.*;
 

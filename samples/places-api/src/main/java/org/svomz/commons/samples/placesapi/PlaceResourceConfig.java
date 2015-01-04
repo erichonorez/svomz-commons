@@ -1,4 +1,4 @@
-package org.svomz.commons.samples.jersey;
+package org.svomz.commons.samples.placesapi;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.svomz.commons.application.modules.JerseyModule;

@@ -7,12 +7,12 @@
 
   <parent>
     <groupId>org.svomz.commons</groupId>
-    <artifactId>commons</artifactId>
+    <artifactId>svomz-commons</artifactId>
     <version>0.1-SNAPSHOT</version>
   </parent>
 
   <groupId>org.svomz.commons</groupId>
-  <artifactId>application</artifactId>
+  <artifactId>svomz-commons-application</artifactId>
   <version>0.1-SNAPSHOT</version>
   <name>svomz-commons-application</name>
 
@@ -25,9 +25,10 @@
     <!-- svomz-commons -->
     <dependency>
       <groupId>org.svomz.commons</groupId>
-      <artifactId>core</artifactId>
+      <artifactId>svomz-commons-core</artifactId>
       <version>0.1-SNAPSHOT</version>
     </dependency>
+
     <dependency>
       <groupId>org.svomz.commons</groupId>
       <artifactId>svomz-commons-net</artifactId>
@@ -40,16 +41,19 @@
   		<artifactId>guava</artifactId>
   		<version>18.0</version>
   	</dependency>
+
   	<dependency>
   		<groupId>com.google.inject</groupId>
   		<artifactId>guice</artifactId>
   		<version>4.0-beta5</version>
   	</dependency>
+
     <dependency>
       <groupId>com.google.inject.extensions</groupId>
       <artifactId>guice-multibindings</artifactId>
       <version>4.0-beta5</version>
     </dependency>
+
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>annotations</artifactId>
@@ -62,6 +66,7 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
     </dependency>
+
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>

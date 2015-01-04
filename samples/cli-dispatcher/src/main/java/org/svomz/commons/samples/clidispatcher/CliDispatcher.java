@@ -1,9 +1,7 @@
-package org.svomz.commons.samples.cli;
+package org.svomz.commons.samples.clidispatcher;
 
 import com.google.common.base.Preconditions;
 import com.google.inject.Inject;
-
-import org.svomz.commons.core.Command;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,9 +13,9 @@ import java.util.Set;
  * Service that listen for inputs from System.in and executes commands according to what the user
  * enters.
  *
- * A CliDispatcher is composed by a fixed set of {@link org.svomz.commons.samples.cli.CliEndPoint}s.
+ * A CliDispatcher is composed by a fixed set of {@link CliEndPoint}s.
  * When the user enters something on the prompt the dispatcher will loop over its set of  endpoints
- * and call the {@link org.svomz.commons.samples.cli.CliEndPoint#runIfMatch(String)} method on each
+ * and call the {@link CliEndPoint#runIfMatch(String)} method on each
  * of them.
  */
 public class CliDispatcher implements Runnable {

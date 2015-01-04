@@ -1,4 +1,4 @@
-package org.svomz.commons.samples.jersey;
+package org.svomz.commons.samples.placesapi;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Module;

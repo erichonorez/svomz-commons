@@ -3,6 +3,6 @@
 .project
 .settings/**
 */.settings/**
-*/target/**
+**/target/**
 .classpath
 target/**

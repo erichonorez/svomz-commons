@@ -1,11 +1,11 @@
-package org.svomz.commons.samples.cli;
+package org.svomz.commons.samples.clidispatcher;
 
 import com.google.common.base.Preconditions;
 
 import org.svomz.commons.core.Command;
 
 /**
- * A {@link org.svomz.commons.samples.cli.CliEndPoint} is a {@link org.svomz.commons.core.Command}
+ * A {@link CliEndPoint} is a {@link org.svomz.commons.core.Command}
  * identified by a noun.
  */
 public abstract class CliEndPoint implements Command {

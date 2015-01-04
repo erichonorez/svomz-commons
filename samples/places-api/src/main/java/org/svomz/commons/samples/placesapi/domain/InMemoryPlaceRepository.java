@@ -1,11 +1,11 @@
-package org.svomz.commons.samples.jersey.domain;
+package org.svomz.commons.samples.placesapi.domain;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Implementation of {@link org.svomz.commons.samples.jersey.domain.PlaceRepository} with an in memory
+ * Implementation of {@link org.svomz.commons.samples.placesapi.domain.PlaceRepository} with an in memory
  * storage system.
  *
  * This implementation is voluntary simple.
