@@ -31,8 +31,20 @@ import javax.ws.rs.core.FeatureContext;
  */
 public class JerseyModule extends AbstractModule {
 
+  private final Class<? extends ResourceConfig> resourceConfig;
+
+  /**
+   * @param resourceConfig ResourceConfig class used to configure Jersey
+   */
+  public JerseyModule(Class<? extends ResourceConfig> resourceConfig) {
+    Preconditions.checkNotNull(resourceConfig);
+
+    this.resourceConfig = resourceConfig;
+  }
+
   @Override
   protected void configure() {
+    this.resourceConfig(binder(), this.resourceConfig);
     LifecycleModule.addRunningCommand(binder(), JerseyServletInstaller.class);
     this.requestStaticInjection(AppInjector.class);
   }
@@ -44,7 +56,7 @@ public class JerseyModule extends AbstractModule {
    * @param binder the binder of you application module.
    * @param resourceConfig the class to be use to configure jersey
    */
-  public static void resourceConfig(Binder binder, Class<? extends ResourceConfig> resourceConfig) {
+  private void resourceConfig(Binder binder, Class<? extends ResourceConfig> resourceConfig) {
     binder.bind(new TypeLiteral<Class<? extends ResourceConfig>>() {}).toInstance(resourceConfig);
   }
 

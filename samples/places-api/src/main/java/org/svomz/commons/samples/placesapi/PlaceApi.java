@@ -40,14 +40,8 @@ public class PlaceApi extends AbstractApplication {
   public Iterable<? extends Module> getModules() {
     List<Module> modules = new ArrayList<>();
     modules.add(new HttpServerModule());
-    modules.add(new JerseyModule());
+    modules.add(new JerseyModule(PlaceResourceConfig.class));
     modules.add(new PlaceDomainModule());
-    modules.add(new AbstractModule() {
-      @Override
-      protected void configure() {
-        JerseyModule.resourceConfig(binder(), PlaceResourceConfig.class);
-      }
-    });
     return modules;
   }
 
