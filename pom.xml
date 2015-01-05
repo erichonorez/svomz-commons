@@ -13,6 +13,7 @@
     <module>core</module>
     <module>samples</module>
     <module>net</module>
+    <module>persistence</module>
   </modules>
 
   <build>
