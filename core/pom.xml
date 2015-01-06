@@ -9,6 +9,7 @@
         <artifactId>svomz-commons</artifactId>
         <groupId>org.svomz.commons</groupId>
         <version>0.1-SNAPSHOT</version>
+        <relativePath></relativePath>
     </parent>
 
     <groupId>org.svomz.commons</groupId>
