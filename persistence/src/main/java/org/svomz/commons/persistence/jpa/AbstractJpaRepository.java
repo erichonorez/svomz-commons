@@ -1,5 +1,10 @@
 package org.svomz.commons.persistence.jpa;
 
+import com.google.common.base.Preconditions;
+
+import org.svomz.commons.persistence.EntityNotFoundException;
+import org.svomz.commons.persistence.Repository;
+
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
@@ -9,14 +14,10 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import org.svomz.commons.persistence.EntityNotFoundException;
-import org.svomz.commons.persistence.Repository;
-
-import com.google.common.base.Preconditions;
-
 /**
- * This implementation of the Repository interface is backed by a JPA implementation. Moreover this
- * implementation let the transaction management responsibility to the caller or an higher level
+ * This implementation of the Repository interface is uses JPA to store and retrieve entities.
+ *
+ * This implementation let the transaction management responsibility to the caller or an higher level
  * (e.g. container).
  *
  * @author Eric Honorez
