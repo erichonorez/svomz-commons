@@ -4,7 +4,6 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Binder;
 import com.google.inject.Singleton;
 import com.google.inject.multibindings.Multibinder;
-import org.svomz.commons.application.DefaultLifecycle;
 import org.svomz.commons.application.Lifecycle;
 import org.svomz.commons.core.Command;
 
@@ -12,7 +11,7 @@ import org.svomz.commons.core.Command;
 public class LifecycleModule extends AbstractModule {
   @Override
   protected void configure() {
-    this.bind(Lifecycle.class).to(DefaultLifecycle.class).in(Singleton.class);
+    this.bind(Lifecycle.class).in(Singleton.class);
     // Add default binding to empty sets.
     LifecycleModule.startingCommandBinder(binder());
     LifecycleModule.runningCommandBinder(binder());
@@ -53,18 +52,18 @@ public class LifecycleModule extends AbstractModule {
   }
 
   private static Multibinder<Command> startingCommandBinder(final Binder binder) {
-    return Multibinder.newSetBinder(binder, Command.class, DefaultLifecycle.StartingCommand.class);
+    return Multibinder.newSetBinder(binder, Command.class, Lifecycle.StartingCommand.class);
   }
 
   private static Multibinder<Command> stoppingCommandBinder(final Binder binder) {
-    return Multibinder.newSetBinder(binder, Command.class, DefaultLifecycle.StoppingCommand.class);
+    return Multibinder.newSetBinder(binder, Command.class, Lifecycle.StoppingCommand.class);
   }
 
   private static Multibinder<Command> runningCommandBinder(final Binder binder) {
-    return Multibinder.newSetBinder(binder, Command.class, DefaultLifecycle.RunningCommand.class);
+    return Multibinder.newSetBinder(binder, Command.class, Lifecycle.RunningCommand.class);
   }
 
   private static Multibinder<Command> terminatedCommandBinder(final Binder binder) {
-    return Multibinder.newSetBinder(binder, Command.class, DefaultLifecycle.TerminatedCommand.class);
+    return Multibinder.newSetBinder(binder, Command.class, Lifecycle.TerminatedCommand.class);
   }
 }

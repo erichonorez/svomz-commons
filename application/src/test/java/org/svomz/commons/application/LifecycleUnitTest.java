@@ -10,14 +10,14 @@ import java.util.List;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class DefaultLifecycleUnitTest {
+public class LifecycleUnitTest {
 
   @Test
   public void testStartupCommands() {
     Command startupCommand1 = mock(Command.class);
     Command startupCommand2 = mock(Command.class);
 
-    DefaultLifecycle lifecycle = DefaultLifecycle.builder()
+    Lifecycle lifecycle = Lifecycle.builder()
         .addStartingCommands(startupCommand1, startupCommand2)
         .build();
     lifecycle.start();
@@ -32,7 +32,7 @@ public class DefaultLifecycleUnitTest {
     Command shutdownCommand1 = mock(Command.class);
     Command shutdownCommand2 = mock(Command.class);
 
-    DefaultLifecycle lifecycle = DefaultLifecycle.builder()
+    Lifecycle lifecycle = Lifecycle.builder()
         .addStoppingCommands(shutdownCommand1, shutdownCommand2)
         .build();
     lifecycle.start();
@@ -47,8 +47,8 @@ public class DefaultLifecycleUnitTest {
   @Test
   public void testRunningCommands() {
     Command runningCommand1 = mock(Command.class);
-    DefaultLifecycle
-        lifecycle = DefaultLifecycle.builder().addRunningCommands(runningCommand1).build();
+    Lifecycle
+        lifecycle = Lifecycle.builder().addRunningCommands(runningCommand1).build();
 
     lifecycle.start();
     Assert.assertTrue(lifecycle.isRunning());
@@ -58,8 +58,8 @@ public class DefaultLifecycleUnitTest {
   @Test
   public void testTerminatedCommands() {
     Command terminatedCommand1 = mock(Command.class);
-    DefaultLifecycle
-        lifecycle = DefaultLifecycle.builder().addTerminatedCommands(terminatedCommand1).build();
+    Lifecycle
+        lifecycle = Lifecycle.builder().addTerminatedCommands(terminatedCommand1).build();
 
     lifecycle.start();
     lifecycle.stop();
@@ -71,7 +71,7 @@ public class DefaultLifecycleUnitTest {
     List<Command> startupCommands = new ArrayList<>();
     List<Command> shutdownCommands = new ArrayList<>();
 
-    DefaultLifecycle lifecycle = DefaultLifecycle.builder().build();
+    Lifecycle lifecycle = Lifecycle.builder().build();
     lifecycle.stop();
   }
 
@@ -80,14 +80,14 @@ public class DefaultLifecycleUnitTest {
     List<Command> startupCommands = new ArrayList<>();
     List<Command> shutdownCommands = new ArrayList<>();
 
-    DefaultLifecycle lifecycle = DefaultLifecycle.builder().build();
+    Lifecycle lifecycle = Lifecycle.builder().build();
     lifecycle.start();
     lifecycle.start();
   }
 
   @Test(expected = IllegalStateException.class)
   public void testShutdownMethodCallMultipleTimes() {
-    DefaultLifecycle lifecycle = DefaultLifecycle.builder().build();
+    Lifecycle lifecycle = Lifecycle.builder().build();
     lifecycle.start();
     lifecycle.stop();
     lifecycle.stop();
@@ -98,7 +98,7 @@ public class DefaultLifecycleUnitTest {
     List<Command> startupCommands = new ArrayList<>();
     List<Command> shutdownCommands = new ArrayList<>();
 
-    final DefaultLifecycle lifecycle = DefaultLifecycle.builder().build();
+    final Lifecycle lifecycle = Lifecycle.builder().build();
     lifecycle.start();
 
     new Thread(new Runnable() {
