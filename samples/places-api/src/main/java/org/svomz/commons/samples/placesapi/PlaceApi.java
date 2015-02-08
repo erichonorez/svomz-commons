@@ -5,6 +5,7 @@ import com.google.inject.Module;
 
 import org.svomz.commons.application.AbstractApplication;
 import org.svomz.commons.application.AppLauncher;
+import org.svomz.commons.application.ServiceApplication;
 import org.svomz.commons.application.modules.HttpServerModule;
 import org.svomz.commons.application.modules.JerseyModule;
 
@@ -26,15 +27,10 @@ import java.util.List;
  *
  * This class contains the main method which allow you to start your application on command line with:
  * <code>
- *   java -jar RestApp
+ *   java -jar RestApp -Dhttp.port=8080
  * </code>
  */
-public class PlaceApi extends AbstractApplication {
-
-  @Override
-  public void run() {
-    // Does nothing. The application logic is in the HealthResource rest end point.
-  }
+public class PlaceApi extends ServiceApplication {
 
   @Override
   public Iterable<? extends Module> getModules() {
