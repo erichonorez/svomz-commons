@@ -23,7 +23,6 @@ public class CliDispatcherModule extends AbstractApplicationModule {
     CliDispatcherModule.endpointBinder(binder());
     this.onStarting(CliDispatcherLauncher.class);
     this.onStopping(CliDispatcherKiller.class);
-
   }
 
   /**

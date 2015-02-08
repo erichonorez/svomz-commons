@@ -1,7 +1,6 @@
 package org.svomz.commons.application;
 
 import com.google.common.base.Preconditions;
-import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
@@ -9,8 +8,6 @@ import com.google.inject.Injector;
 import com.google.inject.Module;
 
 import org.svomz.commons.application.modules.LifecycleModule;
-
-import javax.annotation.concurrent.GuardedBy;
 
 /**
  * An application launcher that sets up a framework for pluggable binding modules. This class should be called

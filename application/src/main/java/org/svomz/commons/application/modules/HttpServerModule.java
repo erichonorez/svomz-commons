@@ -5,11 +5,13 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Binder;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
+import com.google.inject.Provider;
 import com.google.inject.Singleton;
 import com.google.inject.multibindings.Multibinder;
 import com.google.inject.servlet.GuiceFilter;
 import com.google.inject.servlet.GuiceServletContextListener;
 
+import org.svomz.commons.application.utils.Args;
 import org.svomz.commons.core.Command;
 import org.svomz.commons.net.http.HttpServer;
 import org.svomz.commons.net.http.JettyHttpServer;
@@ -22,7 +24,18 @@ public class HttpServerModule extends AbstractModule {
 
   @Override
   protected void configure() {
-    this.bind(HttpServer.class).to(JettyHttpServer.class).in(Singleton.class);
+    Args.integer(this.binder(), "http.port");
+
+    this.bind(HttpServer.class).toProvider(new Provider<HttpServer>() {
+      @Inject
+      @Args.Cmd
+      private int port;
+
+      @Override
+      public HttpServer get() {
+        return new JettyHttpServer(this.port);
+      }
+    }).in(Singleton.class);
 
     HttpServerModule.addContextListener(this.binder(), AppServletConfig.class);
     LifecycleModule.addStartingCommand(binder(), HttpServerLauncher.class);

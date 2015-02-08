@@ -7,20 +7,36 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
 import java.util.EnumSet;
+import java.util.logging.Logger;
 
 import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
 import javax.servlet.ServletContextListener;
 import javax.servlet.http.HttpServlet;
 
+/**
+ * Implements {@link org.svomz.commons.net.http.HttpServer} using Jetty.
+ *
+ * This simple implementation uses a {@link org.eclipse.jetty.servlet.ServletContextHandler} with "/"
+ * as context path.
+ *
+ * This implementation has no session nor security handlers.
+ */
 public class JettyHttpServer implements HttpServer {
+
+  private final static Logger LOG = Logger.getLogger(JettyHttpServer.class.getName());
 
   private final ServletContextHandler servletContextHandler;
 
   private final Server server;
 
-  public JettyHttpServer() {
-    this.server = new Server(8080);
+  /**
+   * @param port the port on which the http server will listen to
+   */
+  public JettyHttpServer(final int port) {
+    Preconditions.checkArgument(port >= 1 && port <= 65535, "Invalid port range.");
+
+    this.server = new Server(port);
     this.servletContextHandler = new ServletContextHandler(ServletContextHandler.NO_SESSIONS);
     this.servletContextHandler.setContextPath("/");
     this.server.setHandler(this.servletContextHandler);
@@ -33,9 +49,10 @@ public class JettyHttpServer implements HttpServer {
     try {
       this.server.start();
     } catch (Exception ex) {
-      // do nothing now
+      //TODO log exception
     }
   }
+
 
   @Override
   public synchronized void stop() {
@@ -44,7 +61,7 @@ public class JettyHttpServer implements HttpServer {
     try {
       this.server.stop();
     } catch (Exception e) {
-      // do nothing now
+      //TODO log exception
     }
   }
 
@@ -67,6 +84,14 @@ public class JettyHttpServer implements HttpServer {
     Preconditions.checkNotNull(path);
 
     this.servletContextHandler.addServlet(servletHolder, path);
+  }
+
+  @Override
+  public void registerServlet(String className, String path) {
+    Preconditions.checkNotNull(className);
+    Preconditions.checkNotNull(path);
+
+    this.servletContextHandler.addServlet(className, path);
   }
 
   @Override
